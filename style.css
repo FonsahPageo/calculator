@@ -1,0 +1,18 @@
+#main{
+    padding: 10px;
+}
+
+#display{
+    padding: 10px;
+    border: 2px solid #ccc;
+    width: 100px;
+    height: 120px;
+}
+
+#numpad{
+    padding: 20px;
+}
+
+button{
+    font-weight: bold;
+}

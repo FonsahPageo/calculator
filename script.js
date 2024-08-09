@@ -14,14 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function setOperator(op) {
-        if (firstNumber !== '') {
-            operator = op;
-            const displayElement = document.getElementById('display');
-            displayElement.textContent = operator;
-        }
-    }
-
     function clearDisplay() {
         document.getElementById('display').textContent = '';
         firstNumber = '';
@@ -29,13 +21,11 @@ document.addEventListener('DOMContentLoaded', function () {
         secondNumber = '';
     }
 
-    function calculateResult() {
-        if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
-            const result = operate(operator, parseFloat(firstNumber), parseFloat(secondNumber));
-            document.getElementById('display').textContent = result;
-            firstNumber = result.toString();
-            operator = '';
-            secondNumber = '';
+    function setOperator(op) {
+        if (firstNumber !== '') {
+            operator = op;
+            const displayElement = document.getElementById('display');
+            displayElement.textContent = operator;
         }
     }
 
@@ -54,6 +44,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function calculateResult() {
+        if (firstNumber !== '' && operator !== '' && secondNumber !== '') {
+            const result = operate(operator, parseFloat(firstNumber), parseFloat(secondNumber));
+            document.getElementById('display').textContent = result;
+            firstNumber = result.toString();
+            operator = '';
+            secondNumber = '';
+        }
+    }
+
     document.addEventListener('keydown', function (event) {
         const key = event.key;
         if (!isNaN(key)) {
@@ -61,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (['+', '-', '*', '/'].includes(key)) {
             display(key);
         } else if (key === 'Enter') {
-            calculateResult(); 
+            calculateResult();
         } else if (key === 'Escape') {
             clearDisplay();
         }
     });
 
-    window.display = function(value) {
+    window.display = function (value) {
         if (['+', '-', '*', '/'].includes(value)) {
             setOperator(value);
         } else {

@@ -8,7 +8,7 @@ body {
 
 #main {
     background-color: #f0f0f0;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -25,14 +25,14 @@ body {
 }
 
 #numpad {
-    /* display: grid; */
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
 }
 
 button {
     padding: 20px;
-    font-size: 1.5em;
+    margin: 2px;
+    font-size: 1.2em;
+    font-weight: bold;
     background-color: #eee;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -40,5 +40,13 @@ button {
 }
 
 button:active {
-    background-color: #ddd;
+    background-color: #56a79a;
+}
+
+.operator{
+    background-color: rgb(162, 233, 162);
+}
+
+.figures{
+    background-color: aquamarine;
 }
